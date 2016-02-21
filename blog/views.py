@@ -53,3 +53,15 @@ def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
     return redirect('post_detail', pk=pk)
+
+@login_required
+def post_unpublish(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.unpublish()
+    return redirect('post_detail', pk=pk)
+
+@login_required
+def post_remove(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('post_list')
