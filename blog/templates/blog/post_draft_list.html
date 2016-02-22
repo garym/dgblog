@@ -5,6 +5,7 @@
           <div class="post">
             <div class="date">
               <p>created: {{ post.created_date|date:'d-m-Y' }}</p>
+	      {% include "blog/post_buttons_include.html" %}
             </div>
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.text|truncatechars:200 }}</p>
