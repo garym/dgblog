@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from . import views
+from . import feeds
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
@@ -13,4 +14,5 @@ urlpatterns = [
     url(r'^post/(?P<pk>[0-9]+)/comment/$', views.add_comment_to_post, name='add_comment_to_post'),
     url(r'^comment/(?P<pk>[0-9]+)/approve/$', views.comment_approve, name='comment_approve'),
     url(r'^comment/(?P<pk>[0-9]+)/remove/$', views.comment_remove, name='comment_remove'),
+    url(r'^latest/feed/$', feeds.LatestEntriesFeed(), name='latest_feed'),
 ]
