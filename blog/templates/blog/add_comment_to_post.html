@@ -2,8 +2,11 @@
 
 {% block content %}
   <h1>New comment</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="save btn btn-default">Send</button>
-    </form>
+  <p>Note that comments are subject to moderation and so will not appear immediately and may be removed.</p>
+  <p>Please do not submit a comment if you disagree with the idea of your content being subject to the <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+
+  <form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Send</button>
+  </form>
 {% endblock %}

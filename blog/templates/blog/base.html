@@ -10,6 +10,9 @@
   </head>
   <body>
     <div class="page-header">
+      <a href="{% url 'latest_feed' %}" class="top-menu">
+        <span>Rss</span>
+      </a>
       {% if user.is_authenticated %}
       <a href="{% url 'post_new' %}" class="top-menu">
         <span class="glyphicon glyphicon-plus"></span>
@@ -38,6 +41,13 @@
         <div class="col-md-8">
           {% block content %}
           {% endblock %}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
         </div>
       </div>
     </div>
