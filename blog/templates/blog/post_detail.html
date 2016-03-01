@@ -9,7 +9,7 @@
     {% endif %}
     {% include "blog/post_buttons_include.html" %}
     <h1>{{ post.title }}</h1>
-    <p>{{ post.text|safe|linebreaks }}</p>
+    <p>{{ post.text|safe }}</p>
   </div>
   <hr>
   <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
